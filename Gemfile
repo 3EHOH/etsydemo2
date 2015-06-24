@@ -1,22 +1,32 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 
 gem 'rails', '3.2.21'
-
-gem 'sqlite3'
-
-group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
   gem 'uglifier', '>= 1.0.3'
-end
+
 
 gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass', '~> 3.3.5'
 
 gem "paperclip", "~> 4.2", github: 'thoughtbot/paperclip'
 
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
+
+group :development, :test do
+	gem 'sqlite3'
+end
+
+group :doc do
+	gem 'sdoc', require: false
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
